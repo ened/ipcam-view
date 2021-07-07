@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class ContentLengthHeaderExtractorTest {
     @Test
     public void contentLengthHeaderExtractor_LowerCaseReturnsCorrectExtractedInteger() throws IOException {
-        String exampleHeader = "--arflebarfle\nContent-type: image/jpeg\ncontent-length: 33499\n\n";
+        String exampleHeader = "--arflebarfle\nContent-type: image/jpeg\ncontent-length: 33499\r\n";
             byte[] exampleBytes = exampleHeader.getBytes(StandardCharsets.UTF_8);
         int contentLength = HeaderExtractor.parseContentLength(exampleBytes);
         assertEquals(33499, contentLength);
