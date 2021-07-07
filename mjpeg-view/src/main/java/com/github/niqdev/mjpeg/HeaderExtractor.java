@@ -29,7 +29,7 @@ public class HeaderExtractor {
         int end = i;
 
         // UNTIL the \n at the end of the line
-        while(headerBytes[end] != '\n') {
+        while(headerBytes[end] != '\n' && headerBytes[end] != '\r') {
             end++;
         }
 
